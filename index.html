@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abhijeet Writes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <script>
+    function postBlog() {
+      const input = document.getElementById('blogInput');
+      const content = input.value.trim();
+
+      if (content === '') {
+        alert('Please write something!');
+        return;
+      }
+
+      const postDiv = document.createElement('div');
+      postDiv.className = 'alert alert-secondary mt-4';
+
+      const timestamp = new Date().toLocaleString();
+
+      postDiv.innerHTML = `
+        <p>${content.replace(/\n/g, '<br>')}</p>
+        <small class="text-muted">Posted on ${timestamp}</small>
+      `;
+
+      document.getElementById('blogContainer').prepend(postDiv);
+      input.value = '';
+    }
+  </script>
+
+  <!-- Header -->
+  <div class="container main"> 
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+</svg>
+        <span class="fs-4 head">Abhijeet Writes</span>
+      </a>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#card-abhi" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="https://github.com/DevopsAbhi58" class="nav-link">GitHub</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="title" class="background">
+    <div class="container top">
+      <div class="row flex-lg-row-reverse align-items-center g-5 pt-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="./Abhijeet.png" class="d-block mx-xl-auto img-fluid" alt="Abhijeet" width="780" height="780" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 text">"From Stack to Syntax – A Developer’s Journal"</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Card -->
+  <div class="container mt-5">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title"> "Keep Building – A Developer's Journey"</h5>
+        <p class="card-text">
+          <p>Every line of code you write is a step forward, even when it doesn’t feel like it. Whether you're debugging a stubborn error at 2 AM, staring blankly at a blank screen, or trying to make sense of a new framework, remember this — you are learning, growing, and building something real.
+
+Being a developer isn’t just about mastering syntax or deploying the next big app. It’s about persistence. It's about waking up every day with a problem-solving mindset. It's about loving the process — the aha! moments and the frustrating dead-ends alike.
+
+There will be times when the imposter syndrome hits hard. You’ll compare yourself to others, question your skills, or wonder if you're good enough. But know this: every great developer once felt exactly like you. What set them apart was that they didn’t give up.
+
+So if today was a tough day — maybe the code broke, or the design didn’t turn out the way you hoped — take a breath, step back, and smile. You’re still in the game. Still showing up. Still building.
+
+Keep coding. Keep learning. Keep going.
+
+The world needs developers like you — resilient, curious, and unafraid to try again. 🚀</p>
+        
+      <div class="card-footer text-muted">Posted on July 18, 2025</div>
+    </div>
+  </div>
+
+  <!-- Carousel -->
+  <div class="container caraousel my-5">
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./1.png" class="d-block w-100" alt="Slide 1" height="800">
+        </div>
+        <div class="carousel-item">
+          <img src="./2.png" class="d-block w-100" alt="Slide 2" height="800">
+        </div>
+        <div class="carousel-item">
+          <img src="./3.png" class="d-block w-100" alt="Slide 3" height="800">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- About Me Section -->
+  <section id="card-abhi" class="my-5 d-flex justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <img src="./my.jpg" class="card-img-top" alt="Abhijeet Jha">
+      <div class="card-body">
+        <h5 class="card-title">About Me</h5>
+        <p class="card-text">💻 Front-End Developer | Passionate about clean code & scalable architecture.<br>
+        🔭 Currently working on modern web apps (React, Node.js, TypeScript).</p>
+        <a href="#" class="btn btn-primary">My Blog</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="container footer">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">© 2025 Abhijeet Writes</p>
+    </footer>
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
